@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PayPal Express Checkout Sample</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+     
+   <div class="container theme-showcase" role="main">
+    <div class="jumbotron">
+        <h1>Wine sellers demo site</h1>
+        <p>This is a PayPal Express Checkout sample.</p>
+    </div>
+    
+    <div class="alert alert-success text-center" role="alert" style="display:none;">
+    <button type="button" class="close" data-dismiss="alert">
+    <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+    </button>
+    <strong>Thank you for shopping!</strong>
+    </div>
+    
+    <table class="table">
+    <tbody>
+    <tr>
+    <td style="text-align:center;">
+    <img alt="200x200" class="img-thumbnail" data-src="holder.js/200x100" src="assets/images/wine1.jpg" data-holder-rendered="true">
+    <h3>Standard Set</h3>
+    <h4>$120.00</h4>
+    <form action='checkout' METHOD='GET'>
+    <input  type='image' name='submit' src='https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif' border='0'  alt='Check out with PayPal'/>
+    <input type="hidden" name="id" value="1">
+    </form>  
+    </td>
+    </tr>
+    <tr>
+    <td style="text-align:center;">
+    <img alt="200x200" class="img-thumbnail" data-src="holder.js/200x100" src="assets/images/wine2.jpg" data-holder-rendered="true">
+    <h3>Recommended</h3>
+    <h4>$31.00</h4>
+    <form action='checkout' METHOD='GET'>
+    <input type='image' name='submit' src='https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif' border='0'  alt='Check out with PayPal'/>
+    <input type="hidden" name="id" value="2">
+    </form>    
+    </td>
+    </tr>
+    <tr>
+    <td style="text-align:center;">
+    <img alt="200x200" class="img-thumbnail" data-src="holder.js/200x100" src="assets/images/wine3.jpg" data-holder-rendered="true">
+    <h3>Good Values</h3>
+    <h4>$8.00</h4>
+    <form action='checkout' METHOD='GET'>
+    <input type='image' name='submit' src='https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif' border='0'  alt='Check out with PayPal'/>
+    <input type="hidden" name="id" value="3">
+    </form>    
+    </td>
+    </tr>
+    </tbody>    
+    </table>     
+    
+</div>
+
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>    
+    
+    <script type="text/javascript">
+    if(window.location.href.indexOf("=") > 0){
+        $(".alert").show();
+    }   
+    </script>
+  </body>
+</html>
