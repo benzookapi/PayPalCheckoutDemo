@@ -1,14 +1,26 @@
 PayPal Express Checkout Demo
 =================================
 
-How to start 
-  Set your USER, PWD, and SIGNATURE as the following environment variables, and 
-  run the command 'activator run'.
-  
-  export PP_API_USER=hoge@mail.com
-  export PP_API_PWD=hogepassword
-  export PP_API_SIG=1234567890abcdefghijk
-  activator run
-  
-Payment amounts corresponds to each price.
+Prerequisite:
+JVM 1.6 or greater
 
+How to start:
+  Set your API credentials (USER, PWD, and SIGNATURE) as the following environment variables, and 
+  run the command 'activator run' in the project root directory.
+  
+  export PP_API_USER=yourname_api1.somemail.com
+  export PP_API_PWD=hogeabcd1234
+  export PP_API_SIG=1234567890abcdefghijk
+  cd ../PayPalCheckoutDemo
+  activator run
+
+Points: 
+  Payment amounts corresponds to each price.
+  
+  Pages are responsive and available both in PC and mobile.
+
+Demo URL:
+  http://jo-pptest.herokuapp.com/
+  
+  If you use this in Heroku, set the variables above by the command "heroku config:set".
+  
