@@ -1,4 +1,14 @@
-This is your new Play application
+PayPal Express Checkout Demo
 =================================
 
-This file will be packaged with your application, when using `activator dist`.
+How to start 
+  Set your USER, PWD, and SIGNATURE as the following environment variables, and 
+  run the command 'activator run'.
+  
+  export PP_API_USER=hoge@mail.com
+  export PP_API_PWD=hogepassword
+  export PP_API_SIG=1234567890abcdefghijk
+  activator run
+  
+Payment amounts corresponds to each price.
+
