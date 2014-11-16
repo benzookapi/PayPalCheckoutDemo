@@ -36,7 +36,7 @@ public class Application extends Controller {
                     }
                 }).recover(new Function<Throwable, Result>() {
                     public Result apply(Throwable e) {
-                        return ok(e.getMessage());
+                        return badRequest("ERROR");
                     }
                 });
     }
@@ -59,7 +59,7 @@ public class Application extends Controller {
                     }
                 }).recover(new Function<Throwable, Result>() {
                     public Result apply(Throwable e) {
-                        return ok(e.getMessage());
+                        return badRequest("ERROR");
                     }
                 });
     }

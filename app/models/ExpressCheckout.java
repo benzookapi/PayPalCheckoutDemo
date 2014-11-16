@@ -56,6 +56,7 @@ public class ExpressCheckout {
                         if (res.isSuccess()) {
                             return LOGIN_URL + res.getToken();
                         } else {
+                            Logger.error("API returned the error: " + body);
                             throw new Throwable(body);
                         }
                     }
@@ -97,6 +98,8 @@ public class ExpressCheckout {
                                             if (res.isSuccess()) {
                                                 return body;
                                             } else {
+                                                Logger.error("API returned the error: "
+                                                        + body);
                                                 throw new Throwable(body);
                                             }
                                         }
@@ -112,6 +115,8 @@ public class ExpressCheckout {
                                     .map(new Function<String, String>() {
                                         public String apply(String body)
                                                 throws Throwable {
+                                            Logger.error("API returned the error: "
+                                                    + body);
                                             throw new Throwable(body);
                                         }
                                     });
