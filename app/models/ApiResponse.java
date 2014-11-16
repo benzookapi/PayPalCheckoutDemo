@@ -2,6 +2,10 @@ package models;
 
 import java.util.StringTokenizer;
 
+/**
+ * API response object with parsed body text.
+ *
+ */
 public class ApiResponse {
 
     private boolean success = false;

@@ -7,6 +7,10 @@ import play.libs.F.Promise;
 import play.libs.ws.WS;
 import play.libs.ws.WSResponse;
 
+/**
+ * PayPal Express Checkout API transaction.
+ *
+ */
 public class ExpressCheckout {
 
     private static final String API_URL = play.Play
@@ -33,6 +37,9 @@ public class ExpressCheckout {
     private static final String BASE_QUERY = "USER=" + API_USER + "&PWD="
             + API_PWD + "&SIGNATURE=" + API_SIG + "&VERSION=" + API_VERSION;
 
+    /**
+     * Call SetExpressCheckout as async processing.
+     */
     public static Promise<String> set(String returnUrl, String cancelUrl,
             double amount) {
         String query = BASE_QUERY + "&METHOD=" + "SetExpressCheckout"
@@ -55,6 +62,11 @@ public class ExpressCheckout {
                 });
     }
 
+    /**
+     * 
+     * Call GetExpressCheckoutDetails and DoExpressCheckoutPayment as async
+     * processing.
+     */
     public static Promise<String> doPayment(String token, double amount) {
         String query = BASE_QUERY + "&METHOD=" + "GetExpressCheckoutDetails"
                 + "&TOKEN=" + token;

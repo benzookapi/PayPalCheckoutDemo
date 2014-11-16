@@ -10,10 +10,16 @@ import views.html.*;
 
 public class Application extends Controller {
 
+    /**
+     * Show the cart page.
+     */
     public static Result index() {
         return ok(index.render());
     }
 
+    /**
+     * Begin the checkout redirecting to the PayPal login page.
+     */
     public static Promise<Result> checkout(Integer id) {
 
         double amount = getAmountById(id);
@@ -22,6 +28,7 @@ public class Application extends Controller {
                 request());
         String cancelUrl = routes.Application.index().absoluteURL(request());
 
+        // Calling setExpressCheckout and redirect to the login page.
         return ExpressCheckout.set(redirectUrl, cancelUrl, amount)
                 .map(new Function<String, Result>() {
                     public Result apply(String res) {
@@ -34,12 +41,15 @@ public class Application extends Controller {
                 });
     }
 
+    /**
+     * Execute the payment redirected by the PayPal login and go back to the
+     * cart page.
+     */
     public static Promise<Result> pay(Integer id, String token) {
 
         double amount = getAmountById(id);
 
-        final int idInt = id;
-
+        // Execute the payment and redirect to the cart page.
         return ExpressCheckout.doPayment(token, amount)
                 .map(new Function<String, Result>() {
                     public Result apply(String res) {
@@ -54,6 +64,9 @@ public class Application extends Controller {
                 });
     }
 
+    /**
+     * Get each amount of items.
+     */
     private static double getAmountById(int id) {
         switch (id) {
         case 1:
